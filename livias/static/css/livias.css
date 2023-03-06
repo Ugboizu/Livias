@@ -1,0 +1,411 @@
+
+*{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+@media only screen and (min-width: 600px) {
+    .col-s-1 {width: 8.33%;}
+    .col-s-2 {width: 16.66%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33%;}
+    .col-s-5 {width: 41.66%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33%;}
+    .col-s-8 {width: 66.66%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;}
+  }
+  
+  @media only screen and (min-width: 768px) {
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+  }
+
+
+header{
+    background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/images/img_parallax.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+#navi, #nav2, #nav3, #nav4, #nav5{
+    color: rgb(253, 250, 252);
+    font-size: 20px;
+}
+
+#navi, #nav2:hover, #nav3:hover, #nav4:hover, #nav5:hover{
+    color: deeppink;
+    border-radius: 20px;  
+}
+
+#logo {
+    font-family: 'League Gothic', sans-serif;
+    font-size: 35px;
+}
+
+#hero{
+    color: rgb(253, 252, 253);
+    margin-top: 200px;
+    text-align: center;
+}
+
+#headd{
+    font-family: 'Special Elite', cursive;
+    font-weight: 400;
+    font-size: 45px;
+}
+
+#headdd{
+    font-family: 'Parisienne', cursive;
+    font-weight: 200;
+    font-size: 30px;
+}
+
+#headButton{
+    border-radius: 20px;
+    padding: 5px;
+    border: 1px solid rgb(252, 49, 157);
+    width: 150px;
+    font-size: 20px;
+    background-color: rgb(252, 62, 163);
+}
+
+#headButton a{
+    text-decoration: none;
+    color: white;
+
+}
+
+#headButton:hover{
+    background-color: deeppink;
+}
+
+#icon1{
+    display: flex;
+    flex-direction: column;
+    float: right;
+    font-size: 30px;
+    margin-top: -230px;
+    position: fixed;
+}
+
+#about{
+    color: rgb(14, 13, 13);
+    background-color: beige;
+    height: 66vh;
+}
+
+#about h1{
+    font-weight: bold;
+}
+
+#about p{
+    text-align: center;
+    font-size: 30px;
+}
+
+/* @media screen and (min-width: 600px){
+    #about p{
+        font-size:15px;
+    }
+}
+
+@media screen and (min-width:800px){
+    #about p{
+        font-size: 5px;
+    }
+}
+
+@media screen and (min-width:600px){
+    #about{
+        height: 150vh;
+    }
+} */
+
+#shop h1{
+    color:rgb(10, 10, 10);
+    font-weight: bold;
+}
+
+.darc {
+    background-color: pink;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin-left: 50px;
+    text-align: center;
+    font-family: arial;
+}
+
+
+#oil img{
+    width: 300px;
+    height: 270px;
+   
+}
+  
+.price {
+    color: black;
+    font-size: 22px;
+    font-weight: bold;
+}
+  
+.darc button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: black;
+    background-color: rgb(216, 66, 136);
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+}
+  
+.darc button:hover {
+    background-color: deeppink;
+}
+
+.darc h2{
+    font-weight: bold;
+    font-style: italic;
+    color: black
+} 
+
+#frequently{
+    /* background-image: radial-gradient(deeppink 30%, pink 70%); */
+}
+
+.parallax {
+    background:linear-gradient(rgba(36, 34, 34, 0.7), rgba(36, 34, 34, 0.7)), url(/images/index.jpg);
+    min-height: 500px; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#frequently h1{
+    color:rgb(252, 249, 249);
+    font-weight: bold;
+}
+
+#frequently section p{
+    color: rgb(253, 251, 251) ;
+    font-size: 25px;
+}
+
+#accordion div{
+    background-color: rgb(250, 245, 249);
+    color: rgb(10, 10, 10);
+}
+
+#accordion p{
+    color: rgb(7, 7, 7);
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+#accordion div h4 i{
+    margin-left: 15px;
+}
+
+/* Importing fonts from Google */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Reseting */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* body {
+    background: linear-gradient(to right, #101c81, #2a6ba3);
+    min-height: 100vh;
+} */
+
+.owl-carousel .owl-item {
+    transition: all 0.3s ease-in-out;
+}
+
+.owl-carousel .owl-item .card {
+    padding: 30px;
+    position: relative;
+}
+
+.owl-carousel .owl-stage-outer {
+    overflow-y: auto !important;
+    padding-bottom: 40px;
+}
+
+.owl-carousel .owl-item img {
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.owl-carousel .owl-item .card .name {
+    position: absolute;
+    bottom: -20px;
+    left: 33%;
+    color: #101c81;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background-color: aquamarine;
+    padding: 0.3rem 0.4rem;
+    border-radius: 5px;
+    box-shadow: 2px 3px 15px #3c405a;
+}
+
+.owl-carousel .owl-item .card {
+    opacity: 0.2;
+    transform: scale3d(0.8, 0.8, 0.8);
+    transition: all 0.3s ease-in-out;
+}
+
+.owl-carousel .owl-item.active.center .card {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+}
+
+.owl-carousel .owl-dots {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+.owl-theme .owl-dots .owl-dot span {
+    height: 20px;
+    background: #2a6ba3 !important;
+    border-radius: 2px !important;
+    opacity: 0.8;
+}
+
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+    height: 13px;
+    width: 13px;
+    opacity: 1;
+    transform: translateY(2px);
+    background: #83b8e7 !important;
+}
+
+@media(min-width: 480.6px) and (max-width: 575.5px) {
+    .owl-carousel .owl-item .card .name {
+        left: 24%;
+    }
+}
+
+@media(max-width: 360px) {
+    .owl-carousel .owl-item .card .name {
+        left: 30%;
+    }
+}
+
+#tact h1{
+    color:rgb(10, 10, 10);
+    font-weight: bold;
+}
+
+#tact2 p{
+    color: rgb(10, 10, 10) ;
+    font-size: 25px;
+}
+
+#conn [type="text"], [type="numbers"]{
+    border: 1px solid rgb(8, 8, 8);
+    font-size: 15px;
+    width: 37.4em;
+    border-radius: 10px;
+    height: 30px;
+}
+
+#conn [type="text"], [type="numbers"], textarea,::placeholder{
+    background-color: rgb(56, 55, 56);
+    color: white;
+    font-size: 15px;
+    padding: 10px;
+}
+
+textarea{
+    border: 1px solid rgb(8, 8, 8);
+    width: 90vh;
+    font-size: 20px;
+    padding-bottom: 150px;
+    border-radius: 10px;
+} 
+
+#contactButton{
+    border: 1px solid rgb(94, 92, 93);
+    border-radius: 10px;
+    width: 30vh;
+    background-color: rgb(75, 72, 73);
+    color: white;
+    font-size: 20px;
+    font-weight: 900;
+    margin-left: 40%;
+}
+
+#contactButton:hover{
+    background-color: rgb(43, 42, 42);
+}
+
+.contimg{
+    width: 48%;
+}
+
+#contactt{    width: 48%;
+}
+
+footer{
+    background-color: rgb(58, 4, 31);
+    height: 60vh;
+    color:white;
+}
+
+#foot1{
+    padding: 60px;
+    list-style-type: none;
+    justify-content: space-around;
+}
+
+#foot1 h4{
+    border-bottom: 5px solid black;
+
+}
+
+#foot3{
+    text-align: center;
+    margin-top: 40px;
+}
+
+#foot3 p a{
+    text-decoration: none;
+    color: rgb(241, 172, 132);
+}
+
+@media only screen and (max-width:420px) {
+    footer{
+        background-color: rgb(58, 4, 31);
+        height: 100vh;
+        color:white;
+    }  
+} 
+

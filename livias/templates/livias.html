@@ -1,0 +1,402 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>livias.com</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/livias.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=League+Gothic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
+    
+</head>
+
+<style>
+    header{
+        background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url({% static '/images/img_parallax.jpg' %});
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 100vh;
+    }
+
+   .parallax {
+        background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url({% static '/images/index.jpg' %});
+        min-height: 500px; 
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+        var silder = $(".owl-carousel");
+        silder.owlCarousel({
+            autoplay: true,
+            autoplayTimeout: 3000,
+            autoplayHoverPause: false,
+            items: 1,
+            stagePadding: 20,
+            center: true,
+            nav: false,
+            margin: 50,
+            dots: true,
+            loop: true,
+            responsive: {
+                0: { items: 1 },
+                480: { items: 2 },
+                575: { items: 2 },
+                768: { items: 2 },
+                991: { items: 3 },
+                1200: { items: 4 }
+            }
+        });
+    }); 
+</script>
+
+<body class="">
+    <header>
+        <!-- Nav bar begins -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" id="logo" href="#">LIVIASHAIRCARE</a>
+    
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                    <ul class="navbar-nav">
+                        <a class="nav-link active" id="navi" aria-current="page" href="#">HOME</a>
+                        <a class="nav-link" id="nav2" href="#about">ABOUT</a>
+                        <a class="nav-link" id="nav3" href="#shop">SHOP</a>
+                        <a class="nav-link" id="nav4" href="#frequently">FAQ</a>
+                        <a class="nav-link" id="nav5" href="#tact">CONTACT</a>
+                        <a class="nav-link" id="nav5" href="{% url 'login' %} ">Login</a>
+                    </ul>
+                </div>
+            </div>
+        </nav> 
+        <!--Nav bar ends-->
+
+        <!--landing page begins-->
+        <section id="hero">
+            <h1 id="headd">LIVIA'S HAIR CARE <br> <p id="headdd">Your favorite hair buddy!!!</p> </h1> <br>
+            <button id="headButton"><a href="#shop">Shop Now</a></button>
+            <div id="icon1" >
+                <a href="tel:+234-9150-537-206"> <i class="fa fa-phone" aria-hidden="true" style="color: deeppink; margin-bottom: 20px;"></i> </a> 
+                <a href="https://m.facebook.com/Livias-Hair-Care-1801072480202134/"> <i class="fa fa-facebook-square" aria-hidden="true" style="color: deeppink; margin-bottom: 20px;"></i>  </a> 
+                <a href="https://instagram.com/livias_hair_care?r=nametag"> <i class="fa fa-instagram" aria-hidden="true" style="color: deeppink; margin-bottom: 20px;"></i> </a> 
+                <a href="malito:liciachekwas@gmail.com?subject = Message = Message"> <i class="fa fa-envelope" aria-hidden="true" style="color: deeppink;"></i> </a> 
+            </div>
+            <br><br>
+        </section>
+        <!--landing page ends-->
+         
+    </header>
+
+    <main>
+  
+        <!--about section begins-->
+        <section> 
+            <div id="about" class="text-center"> <br> <br>
+                <h1>About Us</h1> <br>
+                <p class="container">Livia's Hair Care is a hair care brand established in 2018, founded in 2019. Our products are made with natural raw materials, are handmade and contain 10 essential hair oils. It nourishes, moisturizes, and rejuvenates the hair, makes it softer and easy to comb, prevents dry scalp and re-grows edges. Livia's Hair Care products make you stand out. It is tested, trusted and approved. </p> <br> <br>
+            </div>  
+        </section>
+        <!--about section ends-->
+       
+        <!--shop section begins-->
+        <div id="shop"> <br> <br>
+            <h1 class="mt-4 text-center">Shop</h1> <br> <br> <br>
+            <div class="d-flex container" id="creamoil">
+                {% for product in products %}
+                <div class="darc col-lg-6 col-sm-6">
+                    <img src="{{product.product_image.url}} " alt="hair cream" style="width:100%">
+                    <h2>{{product.product_name}} </h2>
+                    <p>{{product.product_description}} </p>
+                    <p class="price">#{{product.product_amount}} </p>  
+                    <p><button>Add to Cart</button></p>
+                </div>
+
+                {% endfor %}
+
+            </div><br><br> <br> <br>
+        </div> 
+        <!--shop section ends-->
+
+        <!--FAQ section begins-->
+        <div id="frequently" class="parallax">
+            <section class="text-center"> <br> <br> <br>
+                <h1 >Frequently Asked Questions</h1>
+                <p>The questions below are the frequently asked questions by customers of LHC</p>
+            </section> <br> <br>
+
+            <div id="accordion" class="container">
+                <div class="card">
+                <h4 class="faq" class="btn form-control text-start faq" href="#faq1" data-bs-toggle="collapse" >
+                    <i class="fa fa-question-circle-o" aria-hidden="true" style="color:deeppink; font-size: 20px;"></i> Does LHC grow virgin hair?
+                </h4>
+                </div>
+
+                <div id="faq1" class="collapse card" data-bs-parent="#accordion">
+                    <p>Our hair butter and hair growth oil used with proper hair care techniques reduces hair breakage and grows virgin hair</p>
+                </div> <br>
+
+                <div class="card">
+                <h4 class="faq" class="btn form-control text-start" href="#faq2" data-bs-toggle="collapse" >
+                    <i class="fa fa-question-circle-o" aria-hidden="true" style="color:deeppink; font-size: 20px;"></i> What is the hair oil for?
+                </h4>
+                </div>
+
+                <div id="faq2" class="collapse card " data-bs-parent="#accordion">
+                    <p>The hair oil is mostly for nourishing the scalp, preventing hair breakage and sealing in moisture. By nourishing the scalp, it promotes hair growth too and it also softens the hair. </p>
+                </div> <br>
+
+                <div class="card">
+                <h4 class="faq" class="btn form-control text-start" href="#faq3" data-bs-toggle="collapse" >
+                    <i class="fa fa-question-circle-o" aria-hidden="true" style="color:deeppink; font-size: 20px;"></i> Is LHC only for Virgin hair?
+                </h4>
+                </div>
+
+                <div id="faq3" class="collapse card" data-bs-parent="#accordion">
+                    <p>No, it is for both virgin and relaxed hair</p>
+                </div> <br>
+
+                <div class="card">
+                <h4 class="faq" class="btn  form-control text-start" href="#faq4" data-bs-toggle="collapse">
+                    <i class="fa fa-question-circle-o" aria-hidden="true" style="color:deeppink; font-size: 20px;"></i> Do you have a shampoo and conditioning set?
+                </h4>
+                </div>
+
+                <div id="faq4" class="collapse card " data-bs-parent="#accordion">
+                    <p>No, we only have hair butter, hair oil and spray bottles at the moment</p>
+                </div> <br>
+
+                <div class="card">
+                <h4 class="faq" class="btn form-control text-start" href="#faq5" data-bs-toggle="collapse">
+                    <i class="fa fa-question-circle-o" aria-hidden="true" style="color:deeppink; font-size: 20px;"></i> What are the Spray bottles used for?
+                </h4>
+                </div>
+
+                <div id="faq5" class="collapse card" data-bs-parent="#accordion">
+                    <p>For applying water to hydrate the hair, you could mix your leave-in conditioner,water and hair oil in it, incase of combing or hair styling </p>
+                </div> <br>
+
+                <div class="card">
+                <h4 class="faq" class="btn form-control text-start" href="#faq6" data-bs-toggle="collapse">
+                    <i class="fa fa-question-circle-o" aria-hidden="true" style="color:deeppink; font-size: 20px;"></i> When do I use the hair oil?
+                </h4>
+                </div>
+
+                <div id="faq6" class="collapse card " data-bs-parent="#accordion">
+                    <p>You can use your hair oil after you have applied your leave-in conditioner</p>
+                </div> <br>
+
+                <div class="card">
+                <h4 class="faq" class="btn form-control text-start" href="#faq7" data-bs-toggle="collapse">
+                    <i class="fa fa-question-circle-o" aria-hidden="true" style="color:deeppink; font-size: 20px;"></i> How often should I use the hair oil?
+                </h4>
+                </div>
+
+                <div id="faq7" class="collapse card " data-bs-parent="#accordion">
+                    <p>You can use the hair oil at least 3 times in a week</p>
+                </div>
+
+            </div> <br> <br> <br> <br>
+
+        </div> 
+        <!--FAQ section ends-->
+
+        <!--Testimonial section begins-->
+        <div class="owl-carousel owl-theme mt-5">
+            <div class="owl-item">
+                <div class="card">
+                    <div class="img-card">
+                        <!-- <img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" -->
+                        alt="">
+                    </div>
+                    <div class="testimonial mt-4 mb-2">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus expedita dicta doloremque odit
+                        saepe quo natus aut accusantium alias blanditiis.
+                    </div>
+                    <div class="name">
+                        Denis Richie
+                    </div>
+                </div>
+            </div>
+            <div class="owl-item">
+                <div class="card">
+                    <div class="img-card">
+                        <!-- <img src="https://images.pexels.com/photos/1024311/pexels-photo-1024311.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" -->
+                        alt="">
+                    </div>
+                    <div class="testimonial mt-4 mb-2">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus expedita dicta doloremque odit
+                        saepe quo natus aut accusantium alias blanditiis.
+                    </div>
+                    <div class="name">
+                        Lisa Sthalekar
+                    </div>
+                </div>
+            </div>
+            <div class="owl-item">
+                <div class="card">
+                    <div class="img-card">
+                        <!-- <img src="https://images.pexels.com/photos/1036622/pexels-photo-1036622.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" -->
+                        alt="">
+                    </div>
+                    <div class="testimonial mt-4 mb-2">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus expedita dicta doloremque odit
+                        saepe quo natus aut accusantium alias blanditiis.
+                    </div>
+                    <div class="name">
+                        Elizabith Richie
+                    </div>
+                </div>
+            </div>
+            <div class="owl-item">
+                <div class="card">
+                    <div class="img-card">
+                        <!-- <img src="https://images.pexels.com/photos/1212984/pexels-photo-1212984.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" -->
+                        alt="">
+                    </div>
+                    <div class="testimonial mt-4 mb-2">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus expedita dicta doloremque odit
+                        saepe quo natus aut accusantium alias blanditiis.
+                    </div>
+                    <div class="name">
+                        Daniel Xavier
+                    </div>
+                </div>
+            </div>
+            <div class="owl-item">
+                <div class="card">
+                    <div class="img-card">
+                        <!-- <img src="https://images.pexels.com/photos/1832959/pexels-photo-1832959.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" -->
+                        alt="">
+                    </div>
+                    <div class="testimonial mt-4 mb-2">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus expedita dicta doloremque odit
+                        saepe quo natus aut accusantium alias blanditiis.
+                    </div>
+                    <div class="name">
+                        Emma Watson
+                    </div>
+                </div>
+            </div>
+            <div class="owl-item">
+                <div class="card">
+                    <div class="img-card">
+                        <!-- <img src="https://images.pexels.com/photos/718261/pexels-photo-718261.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" -->
+                        alt="">
+                    </div>
+                    <div class="testimonial mt-4 mb-2">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus expedita dicta doloremque odit
+                        saepe quo natus aut accusantium alias blanditiis.
+                    </div>
+                    <div class="name">
+                        Mohammad Imran
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Testimonial sections ends-->
+
+        <!--contact area begins-->
+        <section id="tact" class="container">
+            <div id="tact2" class="text-center">
+                <br> <br> <br>
+                <h1>Contact</h1>
+                <p>Feel free to ask any questions and contact us when confused.</p>
+            </div> <br> <br>
+
+            <div class="d-flex container" >
+                <div class="contimg col-md-6">
+                    <img src="{% static '/images/contactimg.jpg' %}" alt="hair cream" style="width: 80vh; height: 70vh; border-radius: 50%; margin-top: -10px;">
+                </div>
+
+                <form id="contactt" action="{% url 'contact' %}" method="POST" >
+                    {% csrf_token %}
+                    <div id="conn" class="">
+                        <div>
+                            <input type="text" class="name  py-4" id="name" name="name" placeholder=" Your Name">
+                        </div> <br>
+                       
+                        <div> 
+                             <input type="text" class="email py-4" id="email" name="email" placeholder=" Your Email"><br>
+                        </div> <br>
+
+                        <div>
+                            <input type="numbers" class="phone py-4" id="phone" name="phonenumber" placeholder=" Phone Number">
+                        </div> <br>
+                    </div>
+
+                    <div >  
+                        <div>
+                            <textarea name="message"> Your Message: </textarea>
+                        </div>
+                    </div> <br>
+                    
+                    <button type="submit" id="contactButton">SUBMIT</button>  <br> <br> <br> <br> <br>
+                </form>
+
+            </div>
+
+            
+        </section>
+        <!--contact area ends-->
+       
+    </main>
+
+    <!--footer section starts-->
+
+    <footer> 
+        <div id="foot1" class="conatiner d-flex ">
+            <div class="">
+                <h4>LIVIAS HAIR CARE</h4> <br>
+                <li>Love your hair always!</li>
+                <li>Wash, moisturize, oil or wash, oil, moisturize</li>
+                <li>There's no perfect hair!</li>
+
+            </div>
+
+            <div class="">
+                <h4>PRODUCTS</h4> <br>
+                <li>Hair Butter</li>
+                <li>Hair Oil</li>
+                <li>Afro Comb</li>
+                <li>Spray Bottle</li>
+            </div>
+
+            <div class="">
+                <h4>Natural Protective Hair Styles</h4> <br>
+                <li>Conrows(all-back)</li>
+                <li>Twisting</li>
+                <li>Loose braids</li>
+            </div>
+
+        </div>
+        
+        <div id="foot3">
+            <p>
+                &copy; 2022 All Rights Reserved,
+                Developed By <a href="https://www.linkedin.com/in/ugboizu-umezurike-83396622b">Umezurike Ugboizu Nmachi.</a>
+            </p> 
+        </div>
+        
+
+    </footer>
+    <!--footer section ends-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.js"></script>
+</body>
+</html>
+
